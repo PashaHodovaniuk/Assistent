@@ -2,12 +2,13 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackContext
 import requests
 import logging
+import os
 
 # Замените 'YOUR_BOT_TOKEN' на токен вашего бота, полученный от BotFather
-TOKEN = '7241331641:AAG62o7VRPtx0g0cNMg8nld3r3Ed5Rgle04'
+TOKEN = os.getenv("TOKEN")
 
 # Токен для WeatherAPI (получите на https://www.weatherapi.com/)
-API_KEY = 'c2eb282df4c34b44934114227241806'
+API_KEY = os.getenv("API_KEY")
 
 # Разрешённые идентификаторы тем
 ALLOWED_TOPICS = [100, 12]  # Замените на реальные идентификаторы тем
