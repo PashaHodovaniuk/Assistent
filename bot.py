@@ -95,13 +95,8 @@ def main():
     application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
 
     # Запускаем бота
-    #application.run_polling()
-    application.run_webhook(
-        listen="0.0.0.0",
-        port=int(os.environ.get("PORT", 8443)),
-        url_path=TOKEN,
-        webhook_url=f"https://{os.getenv('HEROKU_APP_NAME')}.herokuapp.com/{TOKEN}"
-    )
+    application.run_polling()
+    
 
 if __name__ == '__main__':
     main()
