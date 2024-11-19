@@ -100,7 +100,7 @@ def main():
         listen="0.0.0.0",
         port=int(os.environ.get("PORT", 8443)),
         url_path=TOKEN,
-        webhook_url=f"https://home-bot-assistent.herokuapp.com/{TOKEN}"
+        webhook_url=f"https://{os.getenv('HEROKU_APP_NAME')}.herokuapp.com/{TOKEN}"
     )
 
 if __name__ == '__main__':
